@@ -63,8 +63,8 @@ namespace Inventory_Manager
             catch (Exception err)
             {
                 Console.WriteLine("Error: " + err);
-            } 
-            
+            }
+
         }
 
         private void exitBtn_Click(object sender, EventArgs e)
@@ -84,10 +84,39 @@ namespace Inventory_Manager
                 String itemToLookFor = inventory.Rows[inventoryGridView.CurrentCell.RowIndex].ItemArray[4].ToString();
                 categoryBox.SelectedIndex = categoryBox.Items.IndexOf(itemToLookFor);
             }
-            catch (Exception err) 
+            catch (Exception err)
             {
                 Console.WriteLine("There has been an error: " + err);
             }
+        }
+
+        private void searchBtn_Click(object sender, EventArgs e)
+        {
+            string searchItems = searchTxtBox.Text;
+
+            // Clear text fields
+            clearBtn_Click(sender, e);
+
+            // Loop through the inventory in DataTable to find the match
+            foreach (DataRow row in inventory.Rows)
+            {
+                string productName = row["Name"].ToString();
+                if (productName.IndexOf(searchItems, StringComparison.OrdinalIgnoreCase) >=0)
+                {
+                    // Populate text fields and category with matching values
+                    idTxtBox.Text = row["ID"].ToString();
+                    nameTxtBox.Text = row["Name"].ToString();
+                    priceTxtBox.Text = row["Price"].ToString();
+                    quantityTxtBox.Text = row["Quantity"].ToString();
+
+                    string categoryLook = row["Category"].ToString();
+                    categoryBox.SelectedIndex = categoryBox.Items.IndexOf(categoryLook);
+
+                    return; // Exits method if it has found a match
+                }
+            }
+
+            MessageBox.Show("No Match found.", "Search Result", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }
