@@ -101,7 +101,10 @@ namespace Inventory_Manager
             foreach (DataRow row in inventory.Rows)
             {
                 string productName = row["Name"].ToString();
-                if (productName.IndexOf(searchItems, StringComparison.OrdinalIgnoreCase) >=0)
+                string id = row["Id"].ToString();
+
+                if (productName.IndexOf(searchItems, StringComparison.OrdinalIgnoreCase) >= 0 ||
+                    id.IndexOf(searchItems, StringComparison.OrdinalIgnoreCase) >= 0) ;
                 {
                     // Populate text fields and category with matching values
                     idTxtBox.Text = row["ID"].ToString();
