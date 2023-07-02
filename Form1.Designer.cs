@@ -53,7 +53,8 @@ namespace Inventory_Manager
             // 
             // label1
             // 
-            this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Showcard Gothic", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.Black;
             this.label1.Location = new System.Drawing.Point(105, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(949, 59);
@@ -223,7 +224,7 @@ namespace Inventory_Manager
             // inventoryGridView
             // 
             this.inventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.inventoryGridView.BackgroundColor = System.Drawing.Color.Silver;
             this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.inventoryGridView.Location = new System.Drawing.Point(378, 118);
             this.inventoryGridView.Name = "inventoryGridView";
@@ -236,7 +237,7 @@ namespace Inventory_Manager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.NavajoWhite;
+            this.BackColor = System.Drawing.Color.DarkKhaki;
             this.ClientSize = new System.Drawing.Size(1157, 626);
             this.Controls.Add(this.searchTxtBox);
             this.Controls.Add(this.searchBtn);

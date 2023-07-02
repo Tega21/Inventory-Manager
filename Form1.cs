@@ -22,6 +22,10 @@ namespace Inventory_Manager
         {
             InitializeComponent();
             loginForm = new LoginForm(this);
+
+
+            // Letting the "Enter" key be used to save inventory into datagrid
+            this.AcceptButton = saveBtn;
         }
 
         private void Form1_Load(object sender, EventArgs e)
