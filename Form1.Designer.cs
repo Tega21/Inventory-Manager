@@ -1,4 +1,6 @@
-﻿namespace Inventory_Manager
+﻿using System.Windows.Forms;
+
+namespace Inventory_Manager
 {
     partial class Form1
     {
@@ -30,11 +32,10 @@
         {
             this.label1 = new System.Windows.Forms.Label();
             this.idTxtBox = new System.Windows.Forms.TextBox();
-            this.inventoryGridView = new System.Windows.Forms.DataGridView();
             this.saveBtn = new System.Windows.Forms.Button();
             this.clearBtn = new System.Windows.Forms.Button();
             this.deleteBtn = new System.Windows.Forms.Button();
-            this.exitBtn = new System.Windows.Forms.Button();
+            this.logoutBtn = new System.Windows.Forms.Button();
             this.nameTxtBox = new System.Windows.Forms.TextBox();
             this.priceTxtBox = new System.Windows.Forms.TextBox();
             this.quantityTxtBox = new System.Windows.Forms.TextBox();
@@ -46,13 +47,14 @@
             this.label6 = new System.Windows.Forms.Label();
             this.searchBtn = new System.Windows.Forms.Button();
             this.searchTxtBox = new System.Windows.Forms.TextBox();
+            this.inventoryGridView = new System.Windows.Forms.DataGridView();
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.Font = new System.Drawing.Font("Microsoft YaHei", 26.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(50, 9);
+            this.label1.Location = new System.Drawing.Point(105, 9);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(949, 59);
             this.label1.TabIndex = 0;
@@ -65,17 +67,6 @@
             this.idTxtBox.Name = "idTxtBox";
             this.idTxtBox.Size = new System.Drawing.Size(203, 20);
             this.idTxtBox.TabIndex = 1;
-            // 
-            // inventoryGridView
-            // 
-            this.inventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
-            this.inventoryGridView.BackgroundColor = System.Drawing.SystemColors.Control;
-            this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.inventoryGridView.Location = new System.Drawing.Point(378, 118);
-            this.inventoryGridView.Name = "inventoryGridView";
-            this.inventoryGridView.Size = new System.Drawing.Size(767, 496);
-            this.inventoryGridView.TabIndex = 2;
-            this.inventoryGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryGridView_CellDoubleClick);
             // 
             // saveBtn
             // 
@@ -111,16 +102,16 @@
             this.deleteBtn.UseVisualStyleBackColor = true;
             this.deleteBtn.Click += new System.EventHandler(this.deleteBtn_Click);
             // 
-            // exitBtn
+            // logoutBtn
             // 
-            this.exitBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.exitBtn.Location = new System.Drawing.Point(132, 577);
-            this.exitBtn.Name = "exitBtn";
-            this.exitBtn.Size = new System.Drawing.Size(103, 37);
-            this.exitBtn.TabIndex = 6;
-            this.exitBtn.Text = "EXIT";
-            this.exitBtn.UseVisualStyleBackColor = true;
-            this.exitBtn.Click += new System.EventHandler(this.exitBtn_Click);
+            this.logoutBtn.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.logoutBtn.Location = new System.Drawing.Point(132, 577);
+            this.logoutBtn.Name = "logoutBtn";
+            this.logoutBtn.Size = new System.Drawing.Size(103, 37);
+            this.logoutBtn.TabIndex = 6;
+            this.logoutBtn.Text = "Logout";
+            this.logoutBtn.UseVisualStyleBackColor = true;
+            this.logoutBtn.Click += new System.EventHandler(this.logoutBtn_Click);
             // 
             // nameTxtBox
             // 
@@ -229,6 +220,18 @@
             this.searchTxtBox.Size = new System.Drawing.Size(306, 20);
             this.searchTxtBox.TabIndex = 17;
             // 
+            // inventoryGridView
+            // 
+            this.inventoryGridView.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
+            this.inventoryGridView.BackgroundColor = System.Drawing.SystemColors.Control;
+            this.inventoryGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.inventoryGridView.Location = new System.Drawing.Point(378, 118);
+            this.inventoryGridView.Name = "inventoryGridView";
+            this.inventoryGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.inventoryGridView.Size = new System.Drawing.Size(767, 496);
+            this.inventoryGridView.TabIndex = 2;
+            this.inventoryGridView.CellDoubleClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.inventoryGridView_CellDoubleClick);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -246,7 +249,7 @@
             this.Controls.Add(this.quantityTxtBox);
             this.Controls.Add(this.priceTxtBox);
             this.Controls.Add(this.nameTxtBox);
-            this.Controls.Add(this.exitBtn);
+            this.Controls.Add(this.logoutBtn);
             this.Controls.Add(this.deleteBtn);
             this.Controls.Add(this.clearBtn);
             this.Controls.Add(this.saveBtn);
@@ -254,6 +257,8 @@
             this.Controls.Add(this.idTxtBox);
             this.Controls.Add(this.label1);
             this.Name = "Form1";
+            this.ShowIcon = false;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Inventory Manager";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.inventoryGridView)).EndInit();
@@ -270,7 +275,7 @@
         private System.Windows.Forms.Button saveBtn;
         private System.Windows.Forms.Button clearBtn;
         private System.Windows.Forms.Button deleteBtn;
-        private System.Windows.Forms.Button exitBtn;
+        private System.Windows.Forms.Button logoutBtn;
         private System.Windows.Forms.TextBox nameTxtBox;
         private System.Windows.Forms.TextBox priceTxtBox;
         private System.Windows.Forms.TextBox quantityTxtBox;
